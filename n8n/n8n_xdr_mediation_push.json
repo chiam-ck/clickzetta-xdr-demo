@@ -1,0 +1,13 @@
+{
+  "name": "xdr-mediation-push (optional, SSH to host)",
+  "nodes": [
+    {"parameters": {"rule": {"interval": [{"field": "minutes", "minutesInterval": 10}]}},
+     "name": "Every 10 min", "type": "n8n-nodes-base.scheduleTrigger", "typeVersion": 1.2, "position": [0, 0]},
+    {"parameters": {"resource": "command", "operation": "execute",
+                    "command": "sudo systemctl start xdr-mediation.service", "cwd": "/opt/xdr-source"},
+     "name": "SSH to xDR source host", "type": "n8n-nodes-base.ssh", "typeVersion": 1, "position": [260, 0],
+     "credentials": {"sshPassword": {"id": "REPLACE", "name": "xDR source host"}}}
+  ],
+  "connections": {"Every 10 min": {"main": [[{"node": "SSH to xDR source host", "type": "main", "index": 0}]]}},
+  "settings": {"executionOrder": "v1"}
+}

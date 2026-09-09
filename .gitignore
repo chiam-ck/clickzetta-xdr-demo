@@ -1,0 +1,8 @@
+.env*
+!.env.clickzetta.example
+*.zip
+evidence/
+out/
+state.json
+.venv/
+__pycache__/

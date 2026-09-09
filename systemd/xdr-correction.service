@@ -1,0 +1,9 @@
+[Unit]
+Description=xDR mediation simulator - push one CORRECTION batch to S3 (manual)
+
+[Service]
+Type=oneshot
+User=xdr-demo
+WorkingDirectory=/opt/xdr-source
+EnvironmentFile=/etc/xdr-demo.env
+ExecStart=/opt/xdr-source/.venv/bin/python /opt/xdr-source/xdr_source.py --correction --s3 s3://${XDR_BUCKET}/xdr

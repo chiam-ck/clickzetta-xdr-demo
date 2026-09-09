@@ -1,0 +1,12 @@
+{
+  "name": "xdr-correction-push (optional, SSH to host)",
+  "nodes": [
+    {"parameters": {}, "name": "Manual", "type": "n8n-nodes-base.manualTrigger", "typeVersion": 1, "position": [0, 0]},
+    {"parameters": {"resource": "command", "operation": "execute",
+                    "command": "sudo systemctl start xdr-correction.service", "cwd": "/opt/xdr-source"},
+     "name": "SSH to xDR source host", "type": "n8n-nodes-base.ssh", "typeVersion": 1, "position": [260, 0],
+     "credentials": {"sshPassword": {"id": "REPLACE", "name": "xDR source host"}}}
+  ],
+  "connections": {"Manual": {"main": [[{"node": "SSH to xDR source host", "type": "main", "index": 0}]]}},
+  "settings": {"executionOrder": "v1"}
+}
