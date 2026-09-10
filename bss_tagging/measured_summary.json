@@ -1,0 +1,260 @@
+{
+  "measured2_delta_0": {
+    "incremental_server_seconds": {
+      "n": 5,
+      "median": 5.5200000000000005,
+      "p95_nearest_rank": 7.098,
+      "min": 5.184,
+      "max": 7.098
+    },
+    "full_server_seconds": {
+      "n": 5,
+      "median": 1.423,
+      "p95_nearest_rank": 2.104,
+      "min": 0.658,
+      "max": 2.104
+    },
+    "incremental_cpu_wall_seconds": {
+      "n": 5,
+      "median": 2.964,
+      "p95_nearest_rank": 3.278,
+      "min": 2.714,
+      "max": 3.278
+    },
+    "full_cpu_wall_seconds": {
+      "n": 5,
+      "median": 2.907,
+      "p95_nearest_rank": 9.158,
+      "min": 2.635,
+      "max": 9.158
+    },
+    "incremental_inputRowCount": {
+      "n": 5,
+      "median": 1860,
+      "p95_nearest_rank": 1860,
+      "min": 1860,
+      "max": 1860
+    },
+    "full_inputRowCount": {
+      "n": 5,
+      "median": 455002,
+      "p95_nearest_rank": 455002,
+      "min": 455002,
+      "max": 455002
+    },
+    "incremental_inputBytes": {
+      "n": 5,
+      "median": 137334377,
+      "p95_nearest_rank": 169275018,
+      "min": 105393953,
+      "max": 169275018
+    },
+    "full_inputBytes": {
+      "n": 5,
+      "median": 216214593,
+      "p95_nearest_rank": 280033575,
+      "min": 152395646,
+      "max": 280033575
+    },
+    "incremental_outputBytes": {
+      "n": 5,
+      "median": 49009,
+      "p95_nearest_rank": 49092,
+      "min": 48949,
+      "max": 49092
+    },
+    "full_outputBytes": {
+      "n": 5,
+      "median": 387713,
+      "p95_nearest_rank": 387726,
+      "min": 387713,
+      "max": 387726
+    },
+    "incremental_job_meter_cru": {
+      "n": 5,
+      "median": 0.000103,
+      "p95_nearest_rank": 0.00011300000000000001,
+      "min": 9.400000000000001e-05,
+      "max": 0.00011300000000000001
+    },
+    "full_job_meter_cru": {
+      "n": 5,
+      "median": 0.000101,
+      "p95_nearest_rank": 0.000318,
+      "min": 9.1e-05,
+      "max": 0.000318
+    }
+  },
+  "measured2_noop_0": {
+    "incremental_server_seconds": {
+      "n": 5,
+      "median": 0.56,
+      "p95_nearest_rank": 15.617999999999999,
+      "min": 0.539,
+      "max": 15.617999999999999
+    },
+    "full_server_seconds": {
+      "n": 5,
+      "median": 1.611,
+      "p95_nearest_rank": 2.229,
+      "min": 1.139,
+      "max": 2.229
+    },
+    "incremental_cpu_wall_seconds": {
+      "n": 5,
+      "median": 0.004,
+      "p95_nearest_rank": 0.005,
+      "min": 0.002,
+      "max": 0.005
+    },
+    "full_cpu_wall_seconds": {
+      "n": 5,
+      "median": 3.785,
+      "p95_nearest_rank": 5.765,
+      "min": 3.319,
+      "max": 5.765
+    },
+    "incremental_inputRowCount": {
+      "n": 5,
+      "median": 0,
+      "p95_nearest_rank": 0,
+      "min": 0,
+      "max": 0
+    },
+    "full_inputRowCount": {
+      "n": 5,
+      "median": 455002,
+      "p95_nearest_rank": 455002,
+      "min": 455002,
+      "max": 455002
+    },
+    "incremental_inputBytes": {
+      "n": 5,
+      "median": 0,
+      "p95_nearest_rank": 0,
+      "min": 0,
+      "max": 0
+    },
+    "full_inputBytes": {
+      "n": 5,
+      "median": 280033575,
+      "p95_nearest_rank": 280033575,
+      "min": 280033575,
+      "max": 280033575
+    },
+    "incremental_outputBytes": {
+      "n": 5,
+      "median": 0,
+      "p95_nearest_rank": 0,
+      "min": 0,
+      "max": 0
+    },
+    "full_outputBytes": {
+      "n": 5,
+      "median": 387713,
+      "p95_nearest_rank": 387713,
+      "min": 387713,
+      "max": 387713
+    },
+    "incremental_job_meter_cru": {
+      "n": 5,
+      "median": 0.0,
+      "p95_nearest_rank": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "full_job_meter_cru": {
+      "n": 5,
+      "median": 0.000131,
+      "p95_nearest_rank": 0.0002,
+      "min": 0.000115,
+      "max": 0.0002
+    }
+  },
+  "scale1m_delta_0": {
+    "incremental_server_seconds": {
+      "n": 5,
+      "median": 5.571,
+      "p95_nearest_rank": 6.771,
+      "min": 4.5920000000000005,
+      "max": 6.771
+    },
+    "full_server_seconds": {
+      "n": 5,
+      "median": 1.476,
+      "p95_nearest_rank": 1.751,
+      "min": 1.091,
+      "max": 1.751
+    },
+    "incremental_cpu_wall_seconds": {
+      "n": 5,
+      "median": 3.07,
+      "p95_nearest_rank": 3.45,
+      "min": 2.768,
+      "max": 3.45
+    },
+    "full_cpu_wall_seconds": {
+      "n": 5,
+      "median": 4.798,
+      "p95_nearest_rank": 4.925,
+      "min": 4.246,
+      "max": 4.925
+    },
+    "incremental_inputRowCount": {
+      "n": 5,
+      "median": 1899,
+      "p95_nearest_rank": 1899,
+      "min": 1899,
+      "max": 1899
+    },
+    "full_inputRowCount": {
+      "n": 5,
+      "median": 4550002,
+      "p95_nearest_rank": 4550002,
+      "min": 4550002,
+      "max": 4550002
+    },
+    "incremental_inputBytes": {
+      "n": 5,
+      "median": 154531462,
+      "p95_nearest_rank": 184089969,
+      "min": 124055643,
+      "max": 184089969
+    },
+    "full_inputBytes": {
+      "n": 5,
+      "median": 164905196,
+      "p95_nearest_rank": 222639449,
+      "min": 94784635,
+      "max": 222639449
+    },
+    "incremental_outputBytes": {
+      "n": 5,
+      "median": 50104,
+      "p95_nearest_rank": 50246,
+      "min": 50055,
+      "max": 50246
+    },
+    "full_outputBytes": {
+      "n": 5,
+      "median": 2120355,
+      "p95_nearest_rank": 2120557,
+      "min": 2120354,
+      "max": 2120557
+    },
+    "incremental_job_meter_cru": {
+      "n": 5,
+      "median": 0.000107,
+      "p95_nearest_rank": 0.00011999999999999999,
+      "min": 9.7e-05,
+      "max": 0.00011999999999999999
+    },
+    "full_job_meter_cru": {
+      "n": 5,
+      "median": 0.000167,
+      "p95_nearest_rank": 0.000171,
+      "min": 0.000147,
+      "max": 0.000171
+    }
+  }
+}

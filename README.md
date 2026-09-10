@@ -20,6 +20,23 @@ No production or employer data is used.
 - `n8n/` contains optional SSH wrappers for the systemd units.
 - `agent/xdr_agent.py` is an optional read-only consumer-agent harness.
 - `findings.md` records observations from the synthetic evaluation.
+- `bss_tagging/` is a separate TMF-like BSS customer-tagging benchmark with SQL,
+  a measurement harness, tests and sanitized aggregate results.
+
+## BSS customer-tagging companion
+
+The [BSS demo](bss_tagging/README.md) models customers, subscribers, accounts,
+subscriptions, bills and complaints, then incrementally maintains six customer
+tags. Live tests covered 100k and 1M customers, five repeated small-delta cycles
+per scale, no-change cycles, and business-event correctness checks.
+
+At 1M customers, a 100-customer delta used 36% less CPU and wrote 97.6% fewer
+bytes than full rebuilding. The five-refresh chain took longer, so a large
+all-in billing saving is not established. See the
+[measured report](bss_tagging/MEASURED_REPORT.md) and
+[aggregate CSV](bss_tagging/measured_results.csv) for methods and limitations.
+Private account rates and raw evidence are omitted. No remote benchmark runs
+automatically; executing measurement stages can create resources and incur costs.
 
 ## Prerequisites
 

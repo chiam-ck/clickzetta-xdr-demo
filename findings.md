@@ -2,6 +2,27 @@
 
 These observations came from synthetic data in a temporary ClickZetta test environment. Tenant identifiers, user identities, job/request IDs, local infrastructure details, screenshots, and raw result files have been intentionally omitted. No severity ratings are assigned.
 
+## BSS customer tagging — September 2026
+
+The separate [BSS measured report](bss_tagging/MEASURED_REPORT.md) contains
+sanitized aggregate measurements, not raw account telemetry or billing rates.
+All 26 remote correctness snapshots and 10 local tests passed.
+
+| Area | Finding | Minimal fix or operational response |
+|---|---|---|
+| Small-delta maintenance | At 1M customers and 1.5M subscriptions, five repeated 100-customer deltas used median 3.070 CPU seconds versus 4.798 for full rebuild, and wrote 50,104 bytes versus 2,120,355. Changed stages reported INCREMENTAL; unaffected stages reported NO_DATA. | Report both actual resource counters and refresh modes, not the incremental label alone. |
+| Fixed overhead and billing | The five-refresh chain took 5.571 server seconds versus 1.476 for full rebuild. The 80% active-compute reduction target was not met; lower all-in billing was not demonstrated. | Separate CPU work from elapsed time and cluster billing; include idle capacity and ingestion. Account-specific prices are withheld from this public copy. |
+| Fixed-delta scale | Growing the customer base from 100k to 1M with the same 100-customer delta increased incremental CPU only 3.6% and logical inputs 2.1%. | Scope the result to these tested sizes and warm-cluster conditions; do not extrapolate an invoice reduction. |
+| Catalog fanout | One offering-family change affected 80k customers. Subscription features remained incremental, but joined customer features and tags refreshed FULL. | Estimate affected-customer fanout; one changed dimension row need not be a small workload. |
+| Unchanged cycles | Five no-change cycles at 100k used median 0.004 CPU seconds and zero profile input/output bytes; all five dynamic tables reported NO_DATA. | An awakened cluster may still incur activation and idle costs. |
+| Correctness | Payments, complaint closure, ageing, termination, consent updates and deletion matched full recomputation. Deleting 100 customers left exactly 99,900 customer/tag rows. | Verify retractions, bidirectional equality, uniqueness and cardinality after each scenario. |
+| EXPLAIN REFRESH | A join plan probe failed with CZLH-66000 and optimizer message `should not have join operator here`, while actual refresh succeeded. | Preserve the failed probe privately, capture defining-SELECT EXPLAINs, and use successful refresh history for actual incrementality. |
+| Metadata syntax | CURRENT_ROLE was not recognized; SHOW JOBS filtering on virtual_cluster could not resolve that column. | Use CURRENT_ROLES() and SHOW JOBS IN VCLUSTER <cluster>. |
+| Metering availability | Current-day job history and experiment compute billing were not yet available when direct profiles and SHOW JOBS already exposed executions. | Keep invoice totals unknown until posted; do not treat profile CPU units as independently billed job charges. |
+| Profile counters | A 100-row audience query reported 101 internal output rows and negative inputDiskBytes. | Use the actual SQL result row count; do not derive physical I/O or egress charges from these counters. |
+
+## xDR evaluation
+
 | Area | Finding | Minimal fix or operational response |
 |---|---|---|
 | Storage connection DDL | `CREATE STORAGE CONNECTION ... TYPE S3 ... REGION = '...'` failed with `CZLH-65000 Compiler internal error - missing mandatory config keys - ENDPOINT`. DDL submission was asynchronous, so the initial response showed `RUNNING`; the error only appeared when polling the job result. | Add `ENDPOINT = 's3.<region>.amazonaws.com'` and poll every asynchronous DDL job before running dependent statements. |
